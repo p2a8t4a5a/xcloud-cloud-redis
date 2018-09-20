@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!-- mybatis-generator属性定义文件 -->
+	<properties resource="mybatis-generator.properties" />
+
+	<context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <!-- TKmybatis配置 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+
+        <!-- 指定生成插件和自定义类 -->
+		<plugin type="${mapper.plugin}">
+			<property name="mappers" value="${mapper.Mapper}" />
+		</plugin>
+
+        <!-- 是否去除自动生成的注释true：是,false:否 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!-- 数据库链接URL、用户名、密码 -->
+		<jdbcConnection driverClass="${jdbc.driverClass}"
+			connectionURL="${jdbc.url}" userId="${jdbc.username}"
+			password="${jdbc.password}"> 
+		</jdbcConnection>
+
+        <!-- 生成模型的包名和位置 -->
+		<javaModelGenerator
+			targetPackage="${targetModelPackage}"
+			targetProject="${targetJavaProject}" />
+
+        <!-- 生成的映射文件包名和位置 -->
+		<sqlMapGenerator targetPackage="${targetXMLPackage}"
+			targetProject="${targetResourcesProject}" />
+
+        <!--
+            1，ANNOTATEDMAPPER：会生成使用Mapper接口+Annotation的方式创建（SQL生成在annotation中）,不会生成对应的XML
+            2，XMLMAPPER：会生成Mapper接口, 接口完全依赖XML
+        -->
+		<javaClientGenerator
+			targetPackage="${targetMapperPackage}"
+			targetProject="${targetJavaProject}" type="XMLMAPPER" />
+
+        <!-- 生成那些表 
+		<table tableName="%">
+			<generatedKey column="id" sqlStatement="Mysql" identity="true" />
+		</table>
+		-->
+		<table tableName="sys_area" domainObjectName="Area" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_config" domainObjectName="Config" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_department" domainObjectName="Department" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_dict" domainObjectName="Dict" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_group" domainObjectName="Group" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_group_role" domainObjectName="GroupRole" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_log" domainObjectName="Log" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_menu" domainObjectName="Menu" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_menu_permission" domainObjectName="MenuPermission" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_module" domainObjectName="Module" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_notice" domainObjectName="Notice" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_oauth_client" domainObjectName="OauthClient" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_operation" domainObjectName="Operation" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_org_role" domainObjectName="OrgRole" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_organization" domainObjectName="Organization" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_permission" domainObjectName="Permission" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_person" domainObjectName="Person" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_resource" domainObjectName="Resource" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_role" domainObjectName="Role" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_role_menu" domainObjectName="RoleMenu" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_role_permission" domainObjectName="RolePermission" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_session" domainObjectName="Session" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_table_log" domainObjectName="TableLog" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_table_name" domainObjectName="TableName" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_upload_file" domainObjectName="UploadFile" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_user" domainObjectName="User" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_user_attribute" domainObjectName="UserAttribute" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_user_contact" domainObjectName="UserContact" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_user_detail" domainObjectName="UserDetail" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_user_group" domainObjectName="UserGroup" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_user_notice" domainObjectName="UserNotice" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_user_org" domainObjectName="UserOrg" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_user_role" domainObjectName="UserRole" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+		<table tableName="sys_validation" domainObjectName="Validation" ><generatedKey column="id" sqlStatement="Mysql" identity="true" /></table>
+	</context>
+</generatorConfiguration>
