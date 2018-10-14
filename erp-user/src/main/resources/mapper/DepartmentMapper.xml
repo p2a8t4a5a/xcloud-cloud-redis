@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.matech.erp.mapper.DepartmentMapper" >
-  <resultMap id="BaseResultMap" type="com.matech.erp.model.Department" >
+<mapper namespace="com.xuan.erp.mapper.DepartmentMapper" >
+  <resultMap id="BaseResultMap" type="com.xuan.erp.model.Department" >
     <!--
       WARNING - @mbg.generated
     -->

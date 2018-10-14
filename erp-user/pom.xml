@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.matech</groupId>
+    <groupId>com.xuan</groupId>
     <artifactId>erp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -31,8 +31,8 @@
         <targetJavaProject>${basedir}/src/main/java</targetJavaProject>
         <targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
         <targetXMLPackage>mapper</targetXMLPackage>
-        <targetMapperPackage>com.matech.erp.mapper</targetMapperPackage>
-        <targetModelPackage>com.matech.erp.model</targetModelPackage>        
+        <targetMapperPackage>com.xuan.erp.mapper</targetMapperPackage>
+        <targetModelPackage>com.xuan.erp.model</targetModelPackage>
     </properties>
 
     <dependencies>
